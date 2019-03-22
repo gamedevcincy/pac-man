@@ -53,9 +53,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\scr.cs" />
-     <Compile Include="Assets\Scripts\PlayerObjectInteraction.cs" />
-     <Compile Include="Assets\Scripts\PlayerScoreTracker.cs" />
+     <Compile Include="Assets\Scripts\GhostController.cs" />
+     <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\ScoreObject.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/Documents/GitHub/pac-man/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

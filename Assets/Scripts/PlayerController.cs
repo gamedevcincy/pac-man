@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerScoreTracker : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public int score;
 
@@ -22,6 +22,7 @@ public class PlayerScoreTracker : MonoBehaviour
         if (scoreObject != null)
         {
             AddScore(scoreObject.points);
+            Debug.Log("Score Added");
         }
     }
 }
