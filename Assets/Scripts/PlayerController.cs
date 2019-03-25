@@ -5,24 +5,26 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public int score;
-    public bool consumedSuperPellet;
+    public bool consumedPowerPellet;
     public float timeLeftSuper;
+    public float powerPelletTime;
 
     void Start()
     {
         score = 0;
-        consumedSuperPellet = false;
+        consumedPowerPellet = false;
         timeLeftSuper = 0;
+        powerPelletTime = 10;
     }
 
     void FixedUpdate()
     {
-        if (consumedSuperPellet)
+        if (consumedPowerPellet)
         {
             timeLeftSuper -= Time.deltaTime;
             if (timeLeftSuper < 0)
             {
-                consumedSuperPellet = false;
+                consumedPowerPellet = false;
             }
         }
     }
@@ -43,8 +45,8 @@ public class PlayerController : MonoBehaviour
 
         if (col.gameObject.tag == "SuperPellet")
         {
-            consumedSuperPellet = true;
-            timeLeftSuper = 5;
+            consumedPowerPellet = true;
+            timeLeftSuper = powerPelletTime;
         }
 
         if (col.gameObject.tag == "Pellet")
@@ -59,7 +61,7 @@ public class PlayerController : MonoBehaviour
 
         if (col.gameObject.tag == "Ghost")
         {
-            if (consumedSuperPellet)
+            if (consumedPowerPellet)
             {
                 // no special behavior
             }
