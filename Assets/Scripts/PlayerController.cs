@@ -31,5 +31,27 @@ public class PlayerController : MonoBehaviour
         {
             consumedSuperPellet = true;
         }
+
+        if (col.gameObject.tag == "Pellet")
+        {
+            // no special behavior
+        }
+
+        if (col.gameObject.tag == "Fruit")
+        {
+            // no special behavior
+        }
+
+        if (col.gameObject.tag == "Ghost")
+        {
+            if (consumedSuperPellet)
+            {
+                // no special behavior
+            }
+            else
+            {
+                // game over
+            }
+        }
     }
 }
