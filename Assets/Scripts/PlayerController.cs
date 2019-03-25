@@ -5,12 +5,26 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public int score;
-    public bool consumedSuperPellet { get; set; }
+    public bool consumedSuperPellet;
+    public float timeLeftSuper;
 
     void Start()
     {
         score = 0;
         consumedSuperPellet = false;
+        timeLeftSuper = 0;
+    }
+
+    void FixedUpdate()
+    {
+        if (consumedSuperPellet)
+        {
+            timeLeftSuper -= Time.deltaTime;
+            if (timeLeftSuper < 0)
+            {
+                consumedSuperPellet = false;
+            }
+        }
     }
 
     void AddScore(int points)
@@ -30,6 +44,7 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.tag == "SuperPellet")
         {
             consumedSuperPellet = true;
+            timeLeftSuper = 5;
         }
 
         if (col.gameObject.tag == "Pellet")
