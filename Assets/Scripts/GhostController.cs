@@ -23,7 +23,7 @@ public class GhostController : MonoBehaviour
             PlayerController playerController = col.GetComponent<PlayerController>();
             if (playerController != null && playerController.consumedPowerPellet)
             {
-                Destroy(this.gameObject);
+                this.gameObject.SetActive(false);
             }
         }
     }
