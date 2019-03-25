@@ -21,7 +21,7 @@ public class GhostController : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             PlayerController playerController = col.GetComponent<PlayerController>();
-            if (playerController != null && playerController.consumedSuperPellet)
+            if (playerController != null && playerController.consumedPowerPellet)
             {
                 Destroy(this.gameObject);
             }
