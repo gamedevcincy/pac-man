@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public int score;
+    public bool consumedSuperPellet { get; set; }
 
     void Start()
     {
         score = 0;
+        consumedSuperPellet = false;
     }
 
     void AddScore(int points)
@@ -23,6 +25,11 @@ public class PlayerController : MonoBehaviour
         {
             AddScore(scoreObject.points);
             Debug.Log("Score Added");
+        }
+
+        if (col.gameObject.tag == "SuperPellet")
+        {
+            consumedSuperPellet = true;
         }
     }
 }
