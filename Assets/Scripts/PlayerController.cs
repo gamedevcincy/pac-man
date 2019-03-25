@@ -6,14 +6,14 @@ public class PlayerController : MonoBehaviour
 {
     public int score;
     public bool consumedPowerPellet;
-    public float timeLeftSuper;
+    public float timeLeftPower;
     public float powerPelletTime;
 
     void Start()
     {
         score = 0;
         consumedPowerPellet = false;
-        timeLeftSuper = 0;
+        timeLeftPower = 0;
         powerPelletTime = 10;
     }
 
@@ -21,8 +21,8 @@ public class PlayerController : MonoBehaviour
     {
         if (consumedPowerPellet)
         {
-            timeLeftSuper -= Time.deltaTime;
-            if (timeLeftSuper < 0)
+            timeLeftPower -= Time.deltaTime;
+            if (timeLeftPower < 0)
             {
                 consumedPowerPellet = false;
             }
@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.tag == "SuperPellet")
         {
             consumedPowerPellet = true;
-            timeLeftSuper = powerPelletTime;
+            timeLeftPower = powerPelletTime;
         }
 
         if (col.gameObject.tag == "Pellet")
