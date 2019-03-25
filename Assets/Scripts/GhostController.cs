@@ -20,12 +20,11 @@ public class GhostController : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            Destroy(this.gameObject);
-            Debug.Log("Destroyed");
-        }
-        else
-        {
-            Debug.Log(col.gameObject.tag);
+            PlayerController playerController = col.GetComponent<PlayerController>();
+            if (playerController != null && playerController.consumedSuperPellet)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 }
