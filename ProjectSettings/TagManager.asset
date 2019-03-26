@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - SuperPellet
   - Ghost
   - Pellet
+  - PowerPellet
   layers:
   - Default
   - TransparentFX
