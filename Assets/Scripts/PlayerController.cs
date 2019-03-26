@@ -43,23 +43,23 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Score Added");
         }
 
-        if (col.gameObject.tag == "SuperPellet")
+        if (col.gameObject.tag == Constants.POWER_PELLET)
         {
             consumedPowerPellet = true;
             timeLeftPower = powerPelletTime;
         }
 
-        if (col.gameObject.tag == "Pellet")
+        if (col.gameObject.tag == Constants.PELLET)
         {
             // no special behavior
         }
 
-        if (col.gameObject.tag == "Fruit")
+        if (col.gameObject.tag == Constants.FRUIT)
         {
             // no special behavior
         }
 
-        if (col.gameObject.tag == "Ghost")
+        if (col.gameObject.tag == Constants.GHOST)
         {
             if (consumedPowerPellet)
             {
@@ -70,5 +70,6 @@ public class PlayerController : MonoBehaviour
                 // game over
             }
         }
+        Debug.Log(col.gameObject.tag);
     }
 }
