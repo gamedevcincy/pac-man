@@ -574,7 +574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   consumedPowerPellet: 0
-  timeLeftSuper: 0
+  timeLeftPower: 0
   powerPelletTime: 0
 --- !u!135 &1552222864
 SphereCollider:
@@ -778,6 +778,11 @@ PrefabInstance:
     - target: {fileID: 7174331418695847698, guid: f610896eeb846de4baa945db5ac39816,
         type: 3}
       propertyPath: m_Name
+      value: PowerPellet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7174331418695847698, guid: f610896eeb846de4baa945db5ac39816,
+        type: 3}
+      propertyPath: m_TagString
       value: PowerPellet
       objectReference: {fileID: 0}
     - target: {fileID: 7174331418695847704, guid: f610896eeb846de4baa945db5ac39816,
