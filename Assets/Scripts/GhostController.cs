@@ -4,26 +4,27 @@ using UnityEngine;
 
 public class GhostController : MonoBehaviour
 {
-    public bool inactive;
     public float timeLeftInactive;
+    public bool active = true;
+    private Renderer objRenderer = null;
 
     // Start is called before the first frame update
     void Start()
     {
         timeLeftInactive = 0;
-        //inactive = false;
+        objRenderer = this.gameObject.GetComponent<Renderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!this.gameObject.activeSelf)
+        objRenderer.enabled = active;
+        if (!active)
         {
             timeLeftInactive -= Time.deltaTime;
             if (timeLeftInactive < 0)
             {
-                //inactive = false;
-                this.gameObject.SetActive(true);
+                active = true;
             }
         }
     }
@@ -35,8 +36,8 @@ public class GhostController : MonoBehaviour
             PlayerController playerController = col.GetComponent<PlayerController>();
             if (playerController != null && playerController.consumedPowerPellet)
             {
-                this.gameObject.SetActive(false);
-                //inactive = true;
+                //this.gameObject.SetActive(false);
+                active = false;
                 timeLeftInactive = 25;
             }
         }
