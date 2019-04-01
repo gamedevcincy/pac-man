@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//ashton was here
 public class GhostController : MonoBehaviour
 {
     public float timeLeftInactive;
