@@ -67,7 +67,8 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                // game over
+                Application.Quit();
+                UnityEditor.EditorApplication.isPlaying = false;
             }
         }
         Debug.Log(col.gameObject.tag);
